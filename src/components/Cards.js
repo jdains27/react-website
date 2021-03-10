@@ -11,9 +11,9 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/img-12.jpg'
-              text='Ruby on Rails idea'
-              label='Stretch Goal'
-              path='/stretch'
+              text='All the cool and fun boards, pieces, and ways to play.'
+              label='Cool Chess'
+              path='/coolchess'
             />
             <CardItem
               src='images/img-11.jpg'

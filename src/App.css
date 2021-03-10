@@ -47,7 +47,6 @@
   
   .coolchess,
   .myteaching,
-  .traditionalteaching,
   .aboutchess,
   .updates {
     background-image: url('/images/img-2.jpg');
@@ -75,11 +74,21 @@
     font-size: 70px;
   }
   
-  .playerchess {
+  .playerchess  {
     background-image: url('/images/img-10.jpg');
     background-position: center;
-    background-size: fill;
+    background-size: 1800px;
     background-repeat: no-repeat;
-    color: white;
+    color: black;
     font-size: 70px;
   }
+
+.traditionalteaching {
+  background-image: url('/images/img-2.jpg');
+  background-position: center;
+  text-align: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 30px;
+}

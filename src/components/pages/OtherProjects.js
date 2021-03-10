@@ -13,7 +13,7 @@ export default function OtherProjects() {
   <br />
   Mod-4: Gmail Remake 
   <br />
-  Mod-5: Youtube Link 
+  Mod-5: Iron Chess
    </h1>;
 }
 

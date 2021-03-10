@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios'
 import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
-import Stretch from './components/pages/Stretch';
 import Updates from './components/pages/Updates';
 import Terms from './components/pages/Terms';
 import AboutUs from './components/pages/AboutUs';
@@ -20,16 +20,57 @@ import TraditionalTeaching from './components/pages/TraditionalTeaching';
 import CoolChess from './components/pages/CoolChess';
 import Dashboard from './components/Dashboard';
 
+export default class App extends Component {
 
-function App() {
+  state = {
+    loggedInStatus: "NOT LOGGED IN", 
+    user: {}
+  }
+
+  checkLoginStatus = () => {
+    axios.get("http://localhost:3001/logged_in", { withCredentials: true })
+    .then(response => {
+      if(response.data.logged_in && this.state.loggedInStatus === "NOT_LOGGED_IN"){
+        this.setState({
+          loggedInStatus: "LOGGED IN", 
+          user: response.data.user
+        })
+      } else if (!response.data.logged_in && this.state.loggedInStatus === "LOGGED_IN"){
+        this.setState({
+          loggedInStatus: "NOT LOGGED IN", 
+          user: {}
+        })
+      }
+    })
+    .catch(err => {
+      console.log("check login error", err)
+    })
+  }
+
+  componentDidMount(){
+    this.checkLoginStatus()
+  }
+
+  handleLogin = (data) => {
+    this.setState({
+      loggedInStatus: "LOGGED IN",
+      user: data.user
+    })
+  }
+
+  handleLogout = () => {
+    this.setState({
+      loggedInStatus: "NOT LOGGED IN", 
+      user: {}
+    })
+  }
+
+  render() {
   return ( 
-    <>
+    <div className='app'>
       <Router>
-        <Navbar  />
+        <Navbar/>
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/dashboard' exact component={Dashboard} />
-          <Route path='/stretch' component={Stretch} />
           <Route path='/updates' component={Updates} />
           <Route path='/terms' component={Terms} />
           <Route path='/aboutus' component={AboutUs} />
@@ -43,11 +84,29 @@ function App() {
           <Route path='/myteaching' component={MyTeaching} />
           <Route path='/traditionalteaching' component={TraditionalTeaching} />
           <Route path='/coolchess' component={CoolChess} />
+          <Route 
+              exact path={"/"} 
+              render={props => (
+                <Home {...props} 
+                  loggedInStatus={this.state.loggedInStatus} 
+                  handleLogin={this.handleLogin} 
+                  handleLogout={this.handleLogout} />
+              )}
+            />
+            <Route 
+              exact path={"/dashboard"} 
+              render={props => (
+                <Dashboard {...props} 
+                  loggedInStatus={this.state.loggedInStatus} 
+                  handleLogin={this.handleLogin} 
+                  handleLogout={this.handleLogout} />
+              )}
+            />
         </Switch>
         <Footer />
       </Router>
-    </>
+    </div>
   );
-}
+              }
+            }
 
-export default App;

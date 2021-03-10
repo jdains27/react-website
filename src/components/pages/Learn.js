@@ -22,15 +22,7 @@ function Learn() {
       buttonSize='btn--large'
     > Traditional Teaching </Button>
     </Link>
-
-    <Link to='/coolchess'>
-    <Button
-      className='btns'
-      buttonStyle='btn--outline'
-      buttonSize='btn--large'
-    > Cool Chess </Button>
-    </Link>
-    </div>;
+  </div>;
 }
 
 export default Learn;

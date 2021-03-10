@@ -24,15 +24,14 @@ function Footer() {
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>Other</h2>
-            <Link to='/'>Site Code</Link>
-            <Link to='/'>Stretch Goals</Link>
+            <Link to='/updates'>Updates</Link>
             <Link to='/otherprojects'>Other Projects</Link>
           </div>
           <div class='footer-link-items'>
             <h2>Social Media</h2>
-            <Link to='/'>Youtube</Link>
-            <Link to='/'>Github</Link>
-            <Link to='/'>LinkedIn</Link>
+            <a href='https://www.youtube.com/' >Youtube</a>
+            <a href='https://github.com/jdains27' >Github</a>
+            <a href='https://www.linkedin.com/' >LinkedIn</a>
           </div>
         </div>
       </div>
