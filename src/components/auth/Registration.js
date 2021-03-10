@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+// import './App.css';
 
 class Registration extends Component {
 
@@ -42,7 +43,7 @@ class Registration extends Component {
 
     render() {
         return (
-            <div>
+            <div className="registration">
                 <h1>Registration</h1>
                 <form onSubmit={this.handleSubmit}>
                 <input 

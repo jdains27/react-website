@@ -17,6 +17,9 @@
   .support,
   .otherprojects,
   .myteaching,
+  .dashboard,
+  .login,
+  .registration,
   .traditionalteaching,
   .coolchess,
   .learn {
@@ -91,4 +94,16 @@
   background-repeat: no-repeat;
   color: black;
   font-size: 30px;
+}
+
+.login,
+.registration,
+.dashboard {
+  background-image: url('/images/img-6.jpg');
+  background-position: center;
+  text-align: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: pink;
+  font-size: 15px;
 }

@@ -1,4 +1,5 @@
 import React, { Component }from 'react';
+import '../App.css';
 import axios from 'axios'
 import Login from '../components/auth/Login';
 import Registration from '../components/auth/Registration'
@@ -28,8 +29,8 @@ class Dashboard extends Component {
         <button onClick={()=>this.handleLogoutClick()} >
           Logout
         </button>
-        <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} />
         <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
+        <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} />
       </div>
     </>
   );
