@@ -32,6 +32,7 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+            <li className='nav-item'> <Link to='/dashboard' className='nav-links'> SignIn/Up </Link> </li>
             <li className='nav-item'> <Link to='/' className='nav-links'> Home </Link> </li>
             <li className='nav-item'> <Link to='/playerchess' className='nav-links'> 2 Player Chess </Link> </li>
             <li className='nav-item'> <Link to='/learn' className='nav-links'> Learn </Link> </li>

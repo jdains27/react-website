@@ -25,7 +25,7 @@ function Footer() {
           <div class='footer-link-items'>
             <h2>Other</h2>
             <Link to='/updates'>Updates</Link>
-            <Link to='/otherprojects'>Other Projects</Link>
+            <Link to='/otherprojects'>Flatiron Projects</Link>
           </div>
           <div class='footer-link-items'>
             <h2>Social Media</h2>
